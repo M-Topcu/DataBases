@@ -2,7 +2,7 @@
 /*
 -Aggregate Methodları (SUM(Topla),COUNT(Say),MIN(EN küçük değer),MAX(En büyük değer),AVG(Ortalama)) 
 -Subquery içinde de kullanılır
--ANcak, sorgu tek bir değer döndürüyor olmalıdır
+-Ancak, sorgu tek bir değer döndürüyor olmalıdır
 SYNTAX: sum() şeklinde olmalı sum () arasında boşluk olmamalı
 */
 
@@ -51,7 +51,7 @@ select min(maas) as en_dusuk_ikinci_maas from calisanlar2
 where maas >(select min(maas) from calisanlar2);
 
 --En yüksek üçüncü maas değerini bulun
-SELECT MAX(maas) as enyuksek_ucuncu_maas from calisanlar2
+SELECT MAX(maas) as en_yuksek_ucuncu_maas from calisanlar2
 WHERE maas<(select max(maas)from calisanlar2 WHERE maas< (SELECT max(maas) from calisanlar2));
 
 --En düşük üçüncü maas değerini bulun

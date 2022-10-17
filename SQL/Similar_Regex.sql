@@ -58,7 +58,7 @@ select kelime from kelimeler where kelime ~* 'h(.)t$';
 --İlk karakteri 'h', son karakteri 't' ve ikinci karakteri 'a'dan 'e'ye herhangi bir karakter olan 
 --“kelime" değerlerini çağırın.
 SELECT kelime from kelimeler where kelime SIMILAR TO '(h|H)[a-e,A-E]%(T|t)';
-select kelime from kelimeler where kelime ~* 'h[a-e,](.*)t$';
+select kelime from kelimeler where kelime ~* 'h[a-e](.*)t';
 
 --İlk karakteri 's', 'a' veya 'y' olan "kelime" değerlerini çağırın.
 select kelime from kelimeler where kelime ~* '^[say](.*)'; -- ^ baslangici temsil eder
@@ -75,7 +75,7 @@ select * from kelimeler where kelime ~ '^h[a|i]t$';
 select kelime from kelimeler WHERE kelime ~ '^[b-s].l(.*)';
 
 --içerisinde en az 2 adet o o barıdıran kelimelerin tüm bilgilerini listeleyiniz.
-select * from kelimeler where kelime similar to '%[oO][oO]%';
+select * from kelimeler where kelime similar to '%[oO]%[oO]%';
 select * from kelimeler where kelime similar to '%[oO]{2}%'; -- Süslü parantez içinde belirttiğimiz rakam bir önceki 
                                                            --köşeli parantez içinde kaçtane olduğunu belirtir
 
