@@ -19,5 +19,64 @@ insert into personel (isim, yas, maas, email) values ('Can', 38, 19000, 'can@gma
 insert into personel (isim, yas, maas, email) values ('Elif', 27, 14000, 'elif@gmail.com');
 insert into personel (isim, yas, maas, email) values ('Ezgi', 38, 21000, 'ezgi@gmail.com');
 insert into personel (isim, yas, maas, email) values ('Sena', 25, 11000, NULL);
+
 -- 1) Tablo bilgilerini listeleyiniz.
 select * from personel;
+
+-- 2) isim, yaş ve maaş bilgilerini listeleyiniz
+SELECT isim,yas,maas FROM personel;
+
+-- 3) id'si 8 olan personel bilgilerini listeleyiniz
+SELECT * FROM personel WHERE id=8;
+
+-- 4) id'si 5 olan personelin isim, yaş ve email bilgilerini listeleyiniz
+SELECT isim,yas,email FROM personel WHERE id=5;
+
+-- 5) 30 yaşından büyük personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE yas>30;
+
+-- 6) maası 21000 olmayan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE maas<>21000;
+
+-- 7) ismi a harfi ile başlayan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE isim ILIKE 'A%';
+
+-- 8) ismi n harfi ile biten personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE isim ILIKE '%n';
+
+-- 9) email adresi gmail olan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE email LIKE '%gmail.com';
+
+-- 10) email adresi gmail olmayan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE email NOT LIKE '%gmail.com';
+--% ile arama yaptigimiz için null gelmez
+
+-- 11) id'si 3,5,7 ve 9 olan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE id IN (3,5,7,9);
+
+-- 12) yaşı 39,48 ve 54 olmayan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE yas NOT IN (39,48,54);
+
+-- 13) yaşı 30 ve 40 arasında olan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE yas BETWEEN 30 AND 40;
+
+-- 14) yaşı 30 ve 40 arasında olmyan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE yas NOT BETWEEN 30 AND 40;
+
+-- 15) emaili null olan personel bilgilerini listeleyiniz.
+SELECT * FROM personel WHERE email IS NULL;
+
+-- 16) personel bilgilerini yaşa göre sıralayınız.
+SELECT * FROM personel ORDER BY yas ASC;
+
+-- 17) personel bilgilerini maaşa göre sıralayınız.
+SELECT maas FROM personel ORDER BY maas;
+
+-- 18) personelin yaşlarını büyükten küçüğe doğru sıralayınız.
+SELECT yas FROM personel ORDER BY yas DESC;
+
+-- 19) personelin maaşlarını büyükten küçüğe doğru sıralayınız.
+SELECT maas FROM personel ORDER BY maas DESC;
+
+-- 20) En yüksek maaş olan ilk 3 personel bilgilerini sıralayınız
+SELECT * FROM personel ORDER BY maas DESC LIMIT 3;
