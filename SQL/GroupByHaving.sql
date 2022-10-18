@@ -6,9 +6,9 @@ GROUP BY ile kullanılır gruplamadan sonraki şart için group by dan sonra HAV
 
 */
 
---Maaş ortalaması 3000’den fazla olan ülkelerdeki erkek çalışanların maaş ortalaması.
-select ulke, round(avg(maas)) as ort_maas from personel where cinsiyet = 'E' and maas>3000 group by ulke 
-select ulke, round(avg(maas)) as ort_maas from personel where cinsiyet = 'E' group by ulke having avg(maas)>3000;
+--Maaş ortalaması 30000’den fazla olan ülkelerdeki erkek çalışanların maaş ortalaması.
+select ulke, round(avg(maas)) as ort_maas from personel where cinsiyet = 'E' and maas>30000 group by ulke;
+select ulke, round(avg(maas)) as ort_maas from personel where cinsiyet = 'E' group by ulke having avg(maas)>30000;
 
 --Erkek çalışanların sayısı 1’den fazla olan ülkelerin maaş ortalamasını getiren sorgu
-select ulke, round(avg(maas)) as ort_maas from personel WHERE cinsiyet='E' group by ulke having count(*)>1
+select ulke, round(avg(maas)) as ort_maas from personel WHERE cinsiyet='E' group by ulke having count(*)>1;

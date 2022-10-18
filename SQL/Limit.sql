@@ -4,7 +4,7 @@
 select * from kisiler limit 5;
 
 --ilk iki veriden sonra 5 veriyi listeleyiniz
-select * from kisiler limit 5 OFFSET 2;
+select * from kisiler limit 5 OFFSET 2; -- MySQL`de l'm't 5,2 desek yetiyor
 
 -- id değeri 5 den büyük olan ilk iki veriyi listeleyiniz
 select * from kisiler where id>5 limit 2;

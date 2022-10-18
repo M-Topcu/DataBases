@@ -75,8 +75,8 @@ where urun_adi is not null group by urun_adi order by max_urun_mikt;
 select isim, urun_adi, sum(urun_miktari) as toplam_urun_miktari from manav
 group by isim, urun_adi order by isim desc;
 
-select * from manav
-select * from personel
+select * from manav;
+select * from personel;
 
 -- personelin calıştığı ülkeleri listeleyiniz
 select ulke from personel group by ulke;
@@ -99,10 +99,16 @@ select ulke, cinsiyet, count(*) as calisan_sayisi, round(avg(yas)) as yas_ort fr
 group by cinsiyet, ulke order by ulke;
 
 -- Her ulke için bay ve bayan çalışan sayısı ve yaş ortalamasını ve maası 30000 den büyük olanları sorgulayınız.
-select ulke, cinsiyet, count(*) as calisan_sayisi, round(avg(yas)) as yas_ort from personel
-where maas>30000 group by ulke, cinsiyet order by ulke;
+select ulke, cinsiyet, count(*) as calisan_sayisi, round(avg(yas)) as yas_ort 
+from personel
+where maas>30000 
+group by ulke, cinsiyet 
+order by ulke;
 
 -- Her ulke için; bay ve bayan çalışan sayısı, yaş ortalamasını, maaşı 30000 den büyük olanları
 -- ve ortalama yaşı büyükten küçüğe doğru sıralayınız.
-select ulke, cinsiyet, count(*) as calisan_sayisi, round(avg(yas)) as ort_yas from personel
-where maas>3000 group by ulke, cinsiyet order by ort_yas desc;
+select ulke, cinsiyet, count(*) as calisan_sayisi, round(avg(yas)) as ort_yas 
+from personel
+where maas>30000 
+group by ulke, cinsiyet 
+order by ort_yas desc;
