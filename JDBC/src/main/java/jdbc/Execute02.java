@@ -7,7 +7,7 @@ public class Execute02 {
 
         Class.forName("org.postgresql.Driver");
 
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Techpoed","postgres","2705Mami??");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Techproed","postgres","********");
 
         Statement st = con.createStatement();
 
@@ -31,7 +31,7 @@ public class Execute02 {
         ResultSet result2 = st.executeQuery(sql2);
         while (result2.next()){
 
-            System.out.println(result2.getString("country_id")+"-->"+result2.getString("country_name"));
+            System.out.println(result2.getString("country_id")+"--> "+result2.getString("country_name"));
 
         }
 
