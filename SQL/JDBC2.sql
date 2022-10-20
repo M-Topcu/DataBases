@@ -7,4 +7,11 @@ ORDER BY number_of_employees DESC
 OFFSET 1 ROW
 FETCH NEXT 1 ROW ONLY;
 
+--Subquery ile
+SELECT company, number_of_employees 
+FROM companies
+WHERE number_of_employees = (SELECT MAX(number_of_employees) 
+							 FROM companies
+							 WHERE number_of_employees < (SELECT MAX(number_of_employees) FROM companies));
+
 SELECT * FROM companies;
