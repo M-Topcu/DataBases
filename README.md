@@ -1,3 +1,3 @@
 # DataBases
-This repository contains my sql and other database languages working practices.
+This repository contains my JDBC, PG-SQL and Mongo-DB languages working practices.
 This repository has not projects, only notes...
